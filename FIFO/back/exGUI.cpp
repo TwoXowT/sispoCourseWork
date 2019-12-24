@@ -18,8 +18,8 @@ int main()
 {
     int fd;
 
-    unlink("/home/twoxowt/Univer/Course/FIFO/firstGateway.txt");
-    char * myfifo = "/home/twoxowt/Univer/Course/FIFO/firstGateway.txt";
+    unlink("/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt");
+    char * myfifo = "/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt";
 
     int fd1 = mkfifo(myfifo, S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH);
     if(fd1 == -1){

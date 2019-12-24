@@ -106,14 +106,9 @@ class Gateway{
         available = val;
     }
 
-    
     void setSpeed(bool val){
 
-        if(speed == 0){
-            std::cout<<"Скорость перекачки воды мгновенная\n";
-            return;
-        }
-
+ 
         if(val){
             speed++;
             std::cout<<"Скорость перекачки воды в шлюзе увеличена "<<speed<<"сек.  \n";
@@ -122,6 +117,11 @@ class Gateway{
         if(!val && (speed > 0)){
             speed--;
             std::cout<<"Скорость перекачки воды в шлюзе уменьшена "<<speed<<"сек.  \n";
+            return;
+        }
+
+        if(speed == 0){
+            std::cout<<"Скорость перекачки воды мгновенная\n";
             return;
         }
     }
@@ -316,11 +316,11 @@ class Gateway{
             break;
         case 231:
             setVisualSignalBottom(true);
-            std::cout<<"Звуковой сигнал нижнего створа включен\n";
+            std::cout<<"Визуальный сигнал нижнего створа включен\n";
             break;
         case 230:
             setVisualSignalBottom(false);
-            std::cout<<"Звуковой сигнал нижнего створа отключен\n";
+            std::cout<<"Визуальный сигнал нижнего створа отключен\n";
             break;        
         case 290:
             waitBottom();
@@ -356,8 +356,8 @@ int main()
     // объект шлюза 
     Gateway first;
 
-    unlink("/home/twoxowt/Univer/Course/FIFO/firstGateway.txt");
-    char * pipe = "/home/twoxowt/Univer/Course/FIFO/firstGateway.txt";
+    unlink("/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt");
+    char * pipe = "/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt";
     
     // Creating the named file(FIFO)
     int fd;
