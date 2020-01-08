@@ -396,8 +396,9 @@ int main()
 {
     // объект шлюза 
     Gateway first;
-    unlink("/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt");
-    char * pipe = "/home/twoxowt/Univer/sispoCourseWork/FIFO/firstGateway.txt";
+
+    unlink("/home/twoxowt/Univer/sispoCourseWork/FIFO/secondGateway.txt");
+    char * pipe = "/home/twoxowt/Univer/sispoCourseWork/FIFO/secondGateway.txt";
     
     // Creating the named file(FIFO)
     int fd;
@@ -410,10 +411,10 @@ int main()
     std::cout<<"LOG: Шлюз подключился к каналу\n";
 
     char arrive[4], depart[4];
-   
+
     while (1)
     {
-        std::cout<<"ШЛЮЗ №1\n";
+        std::cout<<"ШЛЮЗ №2\n";
         first.monitoring();       
         // открыли для чтения
         fd = open(pipe, O_RDONLY);
